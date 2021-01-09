@@ -22,43 +22,47 @@ while oyuncu<=21:
         gelen_sayı = kart_listesi[rast]
         oyuncu += gelen_sayı
         print("Çektiğiniz kart: {}".format(gelen_sayı))
-        print("Skorunuz:{}".format(oyuncu))
+        print(colored("Skorunuz:{}".format(oyuncu),'blue'))
         continue
     else:
         Oyuncu_Total = oyuncu
         print("Skorunuz: {} ".format(Oyuncu_Total))
         break
 if oyuncu > 21:
-    print("Kaybettiniz")
+    print(colored("Kaybettiniz",'red'))
 #Kasanın Turu
 while (oyuncu <=21 and kasa<=21):
+    if kasa == 21 & oyuncu <=21:
+        print(colored("Kaybettiniz",'red'))
+        break
+
     rast = random.randint(0, 13)
     kasaya_gelen_sayı = kart_listesi[rast]
     kasa += kasaya_gelen_sayı
     print("Kasanın çektiği kart: {}".format(kasaya_gelen_sayı))
-    print("Kasa skoru:{}".format(kasa))
+    print(colored("Kasa skoru:{}".format(kasa),'red'))
     time.sleep(1)
     if kasa > oyuncu:
         break
 
 if (kasa > 21 and oyuncu<=21):
-    print("KASA TOPLAMI:{}".format(kasa))
-    print("Sizin Toplamınız:{}".format(oyuncu))
-    print("Kazandınız")
+    print(colored("KASA TOPLAMI:{}".format(kasa), 'blue'))
+    print(colored("Sizin Toplamınız:{}".format(oyuncu),'blue'))
+    print(colored("Kazandınız",'green'))
 
 while (oyuncu<=21 and kasa <=21):
     if kasa > oyuncu:
-        print("Kasa Toplam: {}".format(kasa))
-        print("Oyuncu Toplam:{}".format(oyuncu))
-        print("KAYBETTİNİZ")
+        print(colored("Kasa Toplam: {}".format(kasa),'blue'))
+        print(colored("Oyuncu Toplam:{}".format(oyuncu),'blue'))
+        print(colored("KAYBETTİNİZ",'red'))
         break
     elif kasa==oyuncu:
-        print("Kasa Toplam: {}".format(kasa))
-        print("Oyuncu Toplam:{}".format(oyuncu))
-        print("BERABERE")
+        print(colored("Kasa Toplam: {}".format(kasa),'blue'))
+        print(colored("Oyuncu Toplam:{}".format(oyuncu),'blue'))
+        print(colored("BERABERE",'yellow'))
         break
     else:
-        print("Kasa Toplam: {}".format(kasa))
-        print("Oyuncu Toplam:{}".format(oyuncu))
-        print("KAZANDINIZ")
+        print(colored("Kasa Toplam: {}".format(kasa),'blue'))
+        print(colored("Oyuncu Toplam:{}".format(oyuncu),'blue'))
+        print(colored("KAZANDINIZ",'green'))
         break
